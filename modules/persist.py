@@ -97,13 +97,14 @@ WantedBy=multi-user.target
 
         try:
             # Crear tarea programada que se ejecuta al iniciar sesión
+            # Usar comillas dobles y escapar correctamente
             cmd = f'schtasks /create /tn "{task_name}" /tr "{self.command}" /sc onlogon /ru SYSTEM /rl HIGHEST /f'
             result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
 
             if result.returncode == 0:
                 print(f"{Colors.GREEN}[+] Tarea programada creada: {task_name}{Colors.RESET}")
                 print(f"{Colors.GREEN}[+] Comando: {self.command}{Colors.RESET}")
-                print(f"{Colors.YELLOW}[*] Verificar: schtasks /query /tn "{task_name}" /fo LIST{Colors.RESET}")
+                print(f"{Colors.YELLOW}[*] Verificar: schtasks /query /tn \"{task_name}\" /fo LIST{Colors.RESET}")
                 return True
             else:
                 self.logger.error(f"Error creando tarea: {result.stderr}")
