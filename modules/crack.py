@@ -3,7 +3,7 @@
 
 """
 Módulo de fuerza bruta de hashes (MD5, SHA1, SHA256, WPA2).
-Uso: python crack.py -h hash.txt -w wordlists/top1000.txt
+Uso: python crack.py -H hash.txt -w wordlists/top1000.txt
 """
 
 import sys
@@ -157,7 +157,7 @@ class HashCracker:
 def main(args):
     """Función principal llamada por snek.py"""
     parser = argparse.ArgumentParser(description="Fuerza bruta de hashes (MD5, SHA1, SHA256, WPA2)")
-    parser.add_argument('-h', '--hash-file', required=True, help="Archivo con los hashes a crackear")
+    parser.add_argument('-H', '--hash-file', required=True, help="Archivo con los hashes a crackear")
     parser.add_argument('-w', '--wordlist', default='wordlists/top1000.txt', help="Archivo con la wordlist")
     parser.add_argument('-a', '--algo', default='md5', choices=['md5', 'sha1', 'sha256', 'sha512', 'ntlm'],
                        help="Algoritmo de hash (default: md5)")
