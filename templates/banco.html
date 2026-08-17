@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco - Iniciar Sesión</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #e8f0fe;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px 32px;
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e8f0fe;
+            margin-bottom: 24px;
+        }
+
+        .header h1 {
+            color: #0d47a1;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: #5f6368;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .security-badge {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: inline-block;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: #202124;
+            margin-bottom: 4px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #dadce0;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #0d47a1;
+            box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.1);
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            background: #0d47a1;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-login:hover {
+            background: #0a3a8a;
+        }
+
+        .btn-login:active {
+            background: #072a66;
+        }
+
+        .links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 16px;
+            font-size: 13px;
+        }
+
+        .links a {
+            color: #0d47a1;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid #e8eaed;
+            font-size: 12px;
+            color: #5f6368;
+        }
+
+        .secure-icon {
+            text-align: center;
+            margin: 16px 0;
+            font-size: 14px;
+            color: #2e7d32;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                margin: 16px;
+                padding: 24px 20px;
+            }
+
+            .header h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏦 Banco Seguro</h1>
+            <p>Acceso a tu cuenta bancaria</p>
+            <div class="security-badge">🔒 Conexión segura SSL</div>
+        </div>
+
+        <form method="POST" action="/">
+            <div class="form-group">
+                <label for="user">Número de cuenta o usuario</label>
+                <input type="text" id="user" name="user" placeholder="Ingresa tu usuario" required autofocus>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+            </div>
+
+            <div class="secure-icon">
+                🔐 Datos encriptados
+            </div>
+
+            <button type="submit" class="btn-login">Iniciar sesión</button>
+        </form>
+
+        <div class="links">
+            <a href="#">¿Olvidaste tu contraseña?</a>
+            <a href="#">Registrarse</a>
+        </div>
+
+        <div class="footer">
+            <p>⚠️ Esta es una página de demostración educativa.</p>
+            <p style="margin-top: 4px;">No ingreses credenciales reales.</p>
+            <p style="margin-top: 8px;">© 2026 The Big Snek - Simulación de seguridad</p>
+        </div>
+    </div>
+</body>
+</html>
